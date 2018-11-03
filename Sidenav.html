@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sidenav</title>
+    <style ref="stylesheet" type="text/css">
+body {
+    margin: 0;
+    font-family: "Lato", sans-serif;
+  }
+  
+  ul {
+  display: flex;
+  justify-content: space-around;
+  flex-flow: column nowrap;
+  
+  border: solid 2px #ddd;
+  width: auto;
+  height: 100%;
+}
+
+li {
+  list-style-type: none;
+  color: white;
+  padding: 0px;
+  display: inline-block;
+}
+
+  .sidebar {
+    margin: 0;
+    padding: 0;
+    width: auto;
+    background-color: #f1f1f1;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+  }
+  
+  .sidebar a {
+    width: auto;
+    height: auto;
+    display: block;
+    color: black;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-top: 20px;
+    text-decoration: none;
+  }
+   
+  a {
+    padding-top: 70px;
+  }
+
+  .sidebar a:hover {
+    color: rgb(8, 62, 240);
+  }
+  
+  div.content {
+    margin-left: 200px;
+    padding: 1px 16px;
+    height: 1000px;
+  }
+
+  .bot{
+      position: absolute;
+      bottom: 0;
+      left: 30px;
+      font-size: 20px;
+  }
+
+  .sidebar .bot a{
+      transform: rotate(0deg);
+  }
+
+  .sidebar .side-btn{
+    display: none;
+  }
+
+  .sidebar #side-check{
+    display: none;
+  }
+  
+  @media screen and (max-width: 700px) {
+    .sidebar {
+      width: 100%;
+      height: auto;
+      position: fixed;
+      z-index: 5;
+      text-align: center;
+    }
+    .sidebar .side-links a {
+      transform: rotate(0deg);
+      margin-top: 50px;
+    }
+    div.content {margin-left: 0;}
+
+    .sidebar .side-btn {
+      display: inline-block;
+      position: absolute;
+      right: 0px;
+      top: 0px;
+      background-color: rgba(0, 0, 0, 0.3);
+    }
+    .sidebar .side-btn label {
+      display: inline-block;
+      width: 50px;
+      height: 50px;
+      padding: 13px;
+    }
+    .sidebar .side-btn label span {
+      display: block;
+      width: 25px;
+      height: 10px;
+      border-top: 2px solid #eee;
+    }
+    .sidebar #side-check:not(:checked) + .side-links {
+      height: 0px;
+    }
+    .sidebar #side-check:checked + .side-links {
+      height: calc(100vh - 50px);
+      overflow-y: auto;
+    }
+    .sidebar .bot a{
+      display: none;
+  }
+    
+  }
+  
+  @media screen and (max-width: 400px) {
+    .sidebar a {
+      text-align: center;
+      float: none;
+    }
+  }
+
+  .sidebar a{
+    transform: rotate(-90deg);
+  }
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+<div class="sidebar">
+                <div class="side-btn">
+                    <label for="side-check">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    </label>
+                </div>
+                <input type="checkbox" id="side-check" />
+            <div class="side-links">
+            <ul>
+                <li><a class="active" href="#">About</a></li>
+            <li><a href="#">Aarohan</a></li>
+            <li><a href="#">Cells</a></li>
+            <li><a href="#">Members</a></li>
+            <li><a href="#">Contact Us</a></li>
+            </ul>
+            <div class="bot">
+                <a href="#">
+                <FontAwesome name="facebook-square" />
+                </a> 
+                <a href="#">
+                <FontAwesome name="instagram" />
+                </a>
+                
+            </div>
+            </div>
+
+            </div>
+</body>
+</html>
